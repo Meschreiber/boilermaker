@@ -1,10 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-//import { Provider } from 'react-redux'
-//import store from './store'
-//import Routes from './Routes'
-  // <Provider store={store}>
-  // </Provider>,
+import '../stylesheets/index.scss';
+
 
 ReactDOM.render(
   <div>Good morning, world.</div>,
