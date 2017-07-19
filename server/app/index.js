@@ -20,14 +20,14 @@ app.use(express.static(rootPath))
 app.use(express.static(browserPath))
 app.use(express.static(nodeModulesPath))
 
-// app.get('/', function (req, res, next) {
-//     res.sendFile(path.join(__dirname, './../browser/index.html'))
-// })
+app.get('*', (req, res)  => {
+  res.sendFile(path.join(__dirname, '../brower/index.html'))
+})
 
 // error handling
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
     console.error(err, err.stack)
-    res.status(500).send(err)
+    res.status(err.status || 500).send(err.message || 'Internal server error.')
 })
 
 module.exports = app
